@@ -27,6 +27,7 @@ Biblioteka edytora dla platformy Maemo.
 Summary:	Header files for libosso-gsf
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libosso-gsf
 Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libosso-gsf.
