@@ -1,10 +1,10 @@
-#
 Summary:	Maemo GSF library
+Summary(pl.UTF-8):	Biblioteka Maemo GSF
 Name:		libosso-gsf
 Version:	1.11.10.4
 Release:	1
 License:	LGPL
-Group:		Development/Libraries
+Group:		Libraries
 Source0:	http://hsivonen.iki.fi/maemo-src/%{name}_%{version}-1.tar.gz
 # Source0-md5:	4c5b31154943108ba0fecf00c8af9f3c
 URL:		http://modest.garage.maemo.org/
@@ -20,12 +20,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 In-place editor library for the Maemo platform.
 
+%description -l pl.UTF-8
+Biblioteka edytora dla platformy Maemo.
+
 %package devel
-Summary:	Header files for libosso
+Summary:	Header files for libosso-gsf
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libosso-gsf
 Group:		Development/Libraries
 
 %description devel
-Header files for libosso.
+Header files for libosso-gsf.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe biblioteki libosso-gsf
 
 %package static
 Summary:	Static libosso-gsf library
@@ -66,14 +73,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libosso-gsf-1.so.1.11.10
+%attr(755,root,root) %{_libdir}/libosso-gsf-1.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libosso-gsf-1.so
+%{_libdir}/libosso-gsf-1.la
 %dir %{_includedir}/libosso-gsf-1
 %dir %{_includedir}/libosso-gsf-1/gsf
 %{_includedir}/libosso-gsf-1/gsf/*.h
-%{_libdir}/libosso-gsf-1.la
 %{_pkgconfigdir}/libosso-gsf-1.pc
 
 %files static
