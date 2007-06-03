@@ -5,7 +5,7 @@ Version:	1.11.10.4
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://hsivonen.iki.fi/maemo-src/%{name}_%{version}-1.tar.gz
+Source0:	http://repository.maemo.org/pool/bora/free/source/%{name}_%{version}-1.tar.gz
 # Source0-md5:	4c5b31154943108ba0fecf00c8af9f3c
 URL:		http://modest.garage.maemo.org/
 BuildRequires:	autoconf >= 2.52
