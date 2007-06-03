@@ -8,26 +8,27 @@ Group:		Libraries
 Source0:	http://hsivonen.iki.fi/maemo-src/%{name}_%{version}-1.tar.gz
 # Source0-md5:	4c5b31154943108ba0fecf00c8af9f3c
 URL:		http://modest.garage.maemo.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
-BuildRequires:	glib2-devel
-BuildRequires:	intltool
+BuildRequires:	glib2-devel >= 1:2.0.0
 BuildRequires:	libtool
-#BuildRequires:	python-devel
-#BuildRequires:	xulrunner-devel
+BuildRequires:	pkgconfig
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-In-place editor library for the Maemo platform.
+Modified version of libgsf for Maemo platform.
 
 %description -l pl.UTF-8
-Biblioteka edytora dla platformy Maemo.
+Zmodyfikowana wersja libgsf dla platformy Maemo.
 
 %package devel
 Summary:	Header files for libosso-gsf
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libosso-gsf
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	glib2-devel >= 1:2.0.0
+Requires:	zlib-devel
 
 %description devel
 Header files for libosso-gsf.
@@ -55,6 +56,7 @@ Statyczna biblioteka libosso-gsf.
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
